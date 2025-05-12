@@ -1,0 +1,12 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    {% for category in item_categories %}
+        <ul>
+            <li> 
+                <a class="word_and_image_spaces p-2 title link_words" href="{% url 'categories_page' category %}"><strong>{{category}}</strong></a>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

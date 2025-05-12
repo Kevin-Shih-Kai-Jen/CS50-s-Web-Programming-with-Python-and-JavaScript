@@ -1,0 +1,28 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Create Listings</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
+
+        {% for item in form %}
+        <div class="bg-secondary-subtle border border-primary-subtle d-flex flex-row mb-3 background">
+               <label class="create_listing_word"> {{item.name}}: </label>
+            <div id="underLineStyle" class="word_and_image_spaces inset_box">
+
+                {% if item != item.image %}
+                    {{item}}
+                {% else %}
+                    <div class="button button1">
+                        {{item}}
+                    </div>
+                {% endif %}
+            </div>
+            
+        </div>
+            <br>
+        {% endfor %}
+        <input class="btn btn-primary" type="submit" value="Save">
+    </form>
+{% endblock %}

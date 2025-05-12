@@ -1,0 +1,37 @@
+<div class="background">
+    <div class="bg-secondary-subtle border border-primary-subtle d-flex flex-row mb-3">
+
+        {% if item.image %}
+            <img src="{{item.image.url}}" alt="{{item.title}} is not avalible">
+        {% else %}
+            <img src="../media/Backup photo/backup.jpg" alt="No photo avalible">
+        {% endif %}
+
+        <div>
+            {% if item.id %}
+                <a class="word_and_image_spaces p-2 title link_words" href="{% url 'item_details' item.id %}"><strong>{{item.title}}</strong></a>
+            {% else %}
+                <a class="word_and_image_spaces p-2 title link_words" href="{% url 'item_details' 0 %}"><strong>{{item.title}}</strong></a>
+            {% endif %}
+
+            <h3 class="word_and_image_spaces p-2"> Price: ${{item.starting_bid}}</h3>
+
+            {% if item.description %}
+                <div>
+                    <h4 class="word_and_image_spaces p-2 break_line">  {{item.description}} </h4>
+                </div>
+            {% endif %}
+            
+            <div>
+                <h6  class="word_and_image_spaces p-2" > First established time: {{item.original_time}} </h6>
+            </div>
+            
+            {% if item.modifying_time != item.original_time %}
+                <div>
+                    <h6  class="word_and_image_spaces p-2" > Last modifying time: {{item.modifying_time}} </h6>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h1> Listing: {{item.category}} </h1>
+    
+    {% if error_message %}
+        <h1 class="title"> {{error_message}}</h1>
+        <br>
+    {% endif %}
+
+    <div>
+        <form action="{% url 'watch_list' item.id%}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="button1"> Add to Watch list </button>
+        </form>
+    </div>
+
+    <div >
+    {% if item.image %}
+        <img src="{{item.image.url}}" alt="{{item.title}} is not avalible"> 
+    {% else %}
+        <img src="../media/Backup photo/backup.jpg" alt="No photo avalible">
+    {% endif %}
+    </div>
+
+    <div>
+        <h5 class="text">Title: {{item.title}} </h5>
+        <h2> $ {{price}} </h2>
+    </div>
+
+    <br>
+
+    <div>
+        {% if my_bidding.bidding_person == user %}
+            <h3>{{times}} bid(s) so far. Your bid is the current bid. </h3>
+        {% else %}
+            <h3>{{times}} bid(s) so far. Someone's bid is the current bid. </h3>
+        {% endif %}
+
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <div>
+                    {{biddingform.bidding_price}}
+                </div>
+                <button type="submit" class="button1">Place Bid </button>
+            </form>
+        </div>
+
+    </div>
+
+    <br>
+    
+    <h2> Details </h2>
+        <ul>
+            <li>  Listed by  : {{item.list_builder}} </li>
+            {% if item.category %}
+            <li>  Category   : {{item.category}} </li>
+            {% endif %}
+            <li>  Description: {{item.description}} </li>
+        </ul>
+    
+    <br>
+
+    <h2> Comments </h2>
+        {% if comments != None%}
+            {% for comment in comments %}
+            <ul>
+                <li>
+                    <label class="comment"> {{comment.commented_user}}:     {{comment.comments}}</label>
+                </li>
+            </ul>
+            {% endfor %}
+        {% endif %}
+
+        <br>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="w3-input"> {{commentform}} </div>
+
+            <button type="submit" class="button1"> Submit your comment </button>
+        </form>
+            
+{% endblock %}

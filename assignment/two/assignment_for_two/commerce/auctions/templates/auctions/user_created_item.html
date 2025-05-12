@@ -1,0 +1,30 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if bidding_user  %}
+        <h2> {{bidding_user}} has won the item: </h2>
+
+        <br>
+
+        {% for item in closed_item %}
+            {% include 'auctions/items_layout.html' %}
+        {% endfor %}
+        ________________________________________________________________________________________________________________________________________________________________________________________________
+    {% endif %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    {%for item in items%}
+        {% include 'auctions/items_layout.html' %}
+        <form  action="{% url 'user_created_item' item.id %}" method="POST">
+            {% csrf_token %}
+            <button class="button1"> Close Bid </button>
+        </form>
+    {% endfor%}
+{% endblock %}

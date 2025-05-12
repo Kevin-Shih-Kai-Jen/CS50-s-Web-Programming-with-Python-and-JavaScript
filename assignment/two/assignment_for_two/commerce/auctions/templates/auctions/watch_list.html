@@ -1,0 +1,46 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Watch List</h2>
+
+    {% for item in watchlist %}
+    <div class="background">
+        <div class="bg-secondary-subtle border border-primary-subtle d-flex flex-row mb-3">
+
+            {% if item.user_watchlist.image %}
+                <img src="{{item.user_watchlist.image.url}}" alt="{{item.user_watchlist.title}} is not avalible">
+            {% else %}
+                <img src="../media/Backup photo/backup.jpg" alt="No photo avalible">
+            {% endif %}
+
+            <div>
+                <a class="word_and_image_spaces p-2 title link_words" href="{% url 'item_details' item.user_watchlist.id %}"><strong>{{item.user_watchlist.title}}</strong></a>
+
+                <h3 class="word_and_image_spaces p-2"> Price: ${{item.user_watchlist.starting_bid}}</h3>
+
+                {% if item.user_watchlist.description %}
+                    <div>
+                        <h4 class="word_and_image_spaces p-2 break_line">  {{item.user_watchlist.description}} </h4>
+                    </div>
+                {% endif %}
+                
+                <div>
+                    <h6  class="word_and_image_spaces p-2" > First established time: {{item.user_watchlist.original_time}} </h6>
+                </div>
+                
+                {% if item.user_watchlist.modifying_time != item.user_watchlist.original_time %}
+                    <div>
+                        <h6  class="word_and_image_spaces p-2" > Last modifying time: {{item.user_watchlist.modifying_time}} </h6>
+                    </div>
+                {% endif %}
+
+                <form method="POST" action="{% url 'remove_watchlist' item.user_watchlist.id %}" class="word_and_image_spaces p-2">
+                    {% csrf_token %}
+                    <button class="button1"> Remove from watchlist<button>
+                    </form> 
+            </div>
+        </div>
+    </div>  
+
+    {% endfor %}
+{% endblock %}
