@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+        {{name}}
+{% endblock %}
+
+{% block body %}
+There were no results matching the query.
+
+The page <span class="wrong_words">'<strong>{{name}}'</strong> </span> does not exist.  
+<br>
+You can create a draft and submit it for review or request that a redirect be created.
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{search_query}} Wrong Pages
+{% endblock %}
+
+{% block body %}
+
+    <ul>
+
+    {% for entry in substring_outcome %}
+        <li> <a href=" url 'name_for_entry' entry"> {{entry}} </a> </li>
+    {% endfor %}
+
+    </ul>
+    <button> Edit Page </button>
+
+{% endblock %}
+

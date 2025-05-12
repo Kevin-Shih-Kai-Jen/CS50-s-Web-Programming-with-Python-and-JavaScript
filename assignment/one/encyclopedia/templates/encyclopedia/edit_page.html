@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+    Edit {{title}} 
+{% endblock %}
+
+{% block body %}
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="container-xl" id="title">
+            <field.errors>
+
+                Original title: <br>
+                <input name="altered_title" value={{title}}></input><br>
+
+                Original content:<br>
+                <textarea name="altered_content">{{content}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary"> save changes </button>
+    </form>
+{% endblock %}
