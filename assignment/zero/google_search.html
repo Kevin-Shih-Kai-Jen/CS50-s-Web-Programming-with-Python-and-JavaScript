@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utc-8">
+        <title> Google Search</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+
+        <!-- 在右上角加兩個搜尋匡 -->
+        <div class="other_pages">
+        <form action=
+        "file:///Users/coolguy/Desktop/chromedriver_mac_arm64/web_development/assignment_for_zero/google_image.html"
+        >
+        
+        <button type="submit"> Google Image Search</button>
+        </form>
+
+        <form action=
+        "file:///Users/coolguy/Desktop/chromedriver_mac_arm64/web_development/assignment_for_zero/google_advanced_search.html"
+        >
+        
+        <button type="submit"> Google Advanced Search</button>
+        </form>
+        </div>
+
+
+        <!-- 長條搜尋匡及其他-->
+        <div class="search_bar">
+            <form action="https://www.google.com/search" >
+                <input type="text" name="q" id="round" placeholder="  🔍Search Google or type a url" >
+                
+                <!-- 
+                    flex 只會影響直接的子元素
+                    所以 div 裡的新的獨立的 block 就不會被影響
+                -->
+
+                <div >
+                    <button type="submit"> Google Search</button>
+                    <a href="https://doodles.google">
+                        <button > I'm Feeling Happy</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+       
+
+    </body>
+</html>
+

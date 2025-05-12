@@ -1,0 +1,70 @@
+#round{
+    border-radius: 20px;
+    background-color: white;
+    width: 300px;
+    margin: 15px;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border-width: 200px;
+    border: 5px solid block;
+}
+
+
+/* 
+"width: 100%" allows all the items to stay at left side
+*/
+
+.direction{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-items: left;
+}
+
+.direction > input{
+    width: 50%;
+}
+
+
+
+.direction input :hover{
+    border-color: lightblue;
+}
+
+#buttom_design{
+    background-color: rgb(73, 73, 211);
+    color: white;
+    width: 30%;
+    margin-left: 20.5%;
+
+}
+
+.search_bar {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_bar div{
+    display: flex;
+    justify-content: center;
+}
+
+label{
+    display: inline-block;
+    text-align: left;
+    width: 200px;
+    margin-right: 10px;
+}
+
+
+.other_pages{
+    display: flex;
+    justify-content: right;
+    align-items: flex-start
+}
