@@ -1,0 +1,29 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+<!-- Compose post-->
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div id="write_post">
+        <div id="post_text">
+            {{form.text}}
+        </div>
+
+        <div id="post_photos">
+            {{form.photos}}
+        </div>
+
+        <div id="post_button">
+            <button type="submit" class="button button1" >Upload</button>
+    </div>
+</form>
+
+<!-- All Post -->
+<div id="all_post">
+    
+</div>
+
+<script src="{% static 'network/network.js' %}"></script>
+
+{% endblock %}

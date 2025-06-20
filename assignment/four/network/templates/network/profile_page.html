@@ -1,0 +1,43 @@
+{% extends "network/layout.html" %}
+{% load static %}
+{% block body %}
+
+<div id="profile_page">
+    <div class="profile_user_info" id="profile_user_info">
+        {% if profile_user.photo %}
+            <img src="{{ profile_user.photo.url }}" class="profile_pic" id="profile_pic">
+        {% else %}
+            <img src="{% static 'network/image/profile_backup_image.jpg' %}" alt="Default profile image">
+        {% endif %}
+
+    {% if imageForm %}
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ imageForm.photo }}
+        <button class="button button1 upload_photo_button">Upload</button>
+        </form>
+    {% endif %}
+
+    </div>
+    <div class="followers" id="followers">
+        {% if other_user_profile_page %}
+            <button id="follow_button" class="button button1 follow_button"> <strong>{{follow_button}}</strong></button>
+            <br>
+        {% endif %}
+
+        <label id="followed_num"><strong>{{followed_num}}</strong></label>
+        followed 
+    </div>
+
+    <div class="following" id="following">
+        <label id="following_num"><strong>{{following_num}}</strong></label>
+        following
+    </div>
+
+    <div class="all_post" id="all_post">
+    </div>
+</div>
+
+
+<script src="{% static 'network/network.js' %}"></script>
+{% endblock %}

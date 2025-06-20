@@ -1,0 +1,190 @@
+/* ======================= 全域設定 ======================= */
+body {
+  background-color: rgb(229, 229, 229);
+}
+
+/* ======================= 表單與輸入 ======================= */
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+textarea.comment {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 10px;
+  max-width: 50%;
+  height: 45px;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+
+/* ======================= 通用按鈕樣式 ======================= */
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 8px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #04AA6D;
+}
+
+.button1:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.comment_button {
+  padding: 13px 16px;
+}
+
+/* ======================= 貼文區塊樣式 ======================= */
+.post {
+  padding: 10px;
+  margin-bottom: 30px;
+  border-style: groove;
+  border-width: 2px;
+  border-radius: 5px;
+  background-color: #ccc;
+}
+
+/* ======================= 圖片 ======================= */
+img {
+  border: 1px solid #ddd;
+  border-radius: 50%; /* 預設橢圓形 */
+  padding: 5px;
+  width: 300px;
+  height: 200px;
+  margin: 7px;
+  object-fit: cover; /* 填滿不變形 */
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+/* ======================= 表情按鈕樣式 ======================= */
+.post_heart {
+  display: flex;
+  align-items: center; /* 垂直置中 */
+  gap: 5px;
+}
+
+div.post_heart button {
+  background-image: url("/static/network/image/heart_button_image-removebg-preview.png"),
+                    url("/static/network/image/background_color_ccc.png");
+  background-repeat: no-repeat;
+  background-size: 70px;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  border: none;
+}
+
+.heart_button.liked {
+  background-image: url("/static/network/image/heart_button.png"),
+                    url("/static/network/image/background_color_ccc.png");
+}
+
+/* ======================= 留言區 ======================= */
+.comment_form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bigCommentDiv {
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.smallCommentDiv {
+  border-left: 6px solid red;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+/* ======================= 編輯與追蹤按鈕 ======================= */
+.edit_button {
+  background-image: url("/static/network/image/edit_button.png"),
+                    url("/static/network/image/background_color_ccc.png");
+  background-repeat: no-repeat;
+  background-size: 47px;
+  object-fit: contain;
+  width: 47px;
+  height: 47px;
+  cursor: pointer;
+  border: none;
+  margin-left: 5px;
+}
+
+.edit_photo_button {
+  background-image: url("/static/network/image/upload_image.png"),
+                    url("/static/network/image/background_color_ccc.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  object-fit: contain;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  margin-left: 5px;
+}
+
+.show_comment_button {
+  background-image: url("/static/network/image/comment_button.png"),
+                    url("/static/network/image/background_color_ccc.png");
+  background-repeat: no-repeat;
+  background-size: 45px;
+  object-fit: contain;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border: none;
+}
+
+/* ======================= 使用者資訊區塊 ======================= */
+.profile_user_info,
+.followers,
+#following_num {
+  margin-left: 1%;
+}
+
+/* ======================= 按鈕排版 ======================= */
+.post_imageButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.next_page_button{
+  align-items: end;
+  size: 30px;
+}
+
+.previous_page_button{
+  align-items: start;
+  size: 30px;
+}
+
